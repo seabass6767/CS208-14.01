@@ -1,7 +1,32 @@
 doctype html
-html
+html(lang="en")
   head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Italianno&family=Montserrat:wght@400;500;600;700&display=swap", rel="stylesheet")
+    link(rel="stylesheet", href="/stylesheets/style.css")
   body
-    block content
+    header.site-header
+      nav.navbar(aria-label="Main navigation")
+        a.logo-link(href="/", aria-label="Downtown Donuts home")
+          span.logo-script Downtown Donuts
+        ul.nav-links
+          li
+            a(href="/") Home
+          li
+            a(href="/menu") Menu
+          li
+            a(href="/about") About
+          li
+            a(href="/comments") Comments
+
+    main
+      block content
+
+    footer.site-footer
+      p.logo-script Downtown Donuts
+      p Family-owned downtown since 1992.
+      p.footer-small Prototype website for CS208 Final Project.
