@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  section.page-hero.comments-hero
+    p.eyebrow Community board
+    h1 Comments
+    p Drop a quick review, favorite order, or note for Downtown Donuts.
+
+  section.comments-layout
+    form.comment-form(action="#", method="post")
+      h2 Post a Comment
+      p.form-intro Keep it short, helpful, and real.
+
+      div.form-group
+        label(for="name") Name
+        input#name(type="text", name="name", maxlength="60", placeholder="Your name")
+
+      div.form-group
+        label(for="comment") Comment
+        textarea#comment(name="comment", maxlength="500", rows="5", placeholder="What should people know?")
+
+      p.form-note Database connection will be added in the full-stack step.
+      button.button.primary(type="submit") Post Comment
+
+    section.comment-feed(aria-label="Customer comments")
+      div.feed-header
+        h2 Recent Posts
+        p Real customer notes will show here.
+
+      article.comment-card
+        div.comment-meta
+          strong Alex
+          span Just now
+        p Solid coffee, quick service, and the maple bar is worth grabbing.
+
+      article.comment-card
+        div.comment-meta
+          strong Jordan
+          span Yesterday
+        p Clean menu page and easy order links. Good spot for a quick downtown stop.
+
+      article.comment-card
+        div.comment-meta
+          strong Casey
+          span 2 days ago
+        p Simple, fresh, and easy to use on mobile.
+
+      button.button.secondary(type="button") Load More
