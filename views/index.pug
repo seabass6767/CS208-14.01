@@ -1,23 +1,46 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  ol
-  each val in todos
-    li
-      span= val.task + ' - '
-      if val.completed > 0
-        span Completed
-      else
-        span Not Completed
-      form(method='POST' action='/delete')
-        input(type='hidden', name='id', value=val.id)
-        button(type='submit') Delete
+  section.hero
+    div.hero-content
+      p.eyebrow Fresh donuts • Warm coffee • Downtown favorite
+      h1.logo-script Downtown Donuts
+      p.hero-text Serving cozy mornings and sweet downtown moments since 1992.
+      div.hero-actions
+        a.button.primary(href="/menu") View Menu
+        a.button.secondary(href="https://www.doordash.com", target="_blank", rel="noopener noreferrer") Order Online
+    div.hero-card
+      p.card-label Today's Mood
+      h2 Glazed, cozy, and fresh.
+      p Stop in for a donut, grab a coffee, and make your morning better.
 
-  hr
-  h2 Add a new task
-  form(method='POST' action='/create')
-    label(for='task') Task:
-    input(type='text', name='task', id='task', required)
-    button(type='submit') Create Task
+  section.section
+    div.section-heading
+      p.eyebrow Why people stop by
+      h2 A small shop with a lot of heart.
+    div.feature-grid
+      article.feature-card
+        div.icon-circle 🍩
+        h3 Fresh Daily
+        p Donuts made for morning coffee runs, study breaks, and downtown cravings.
+      article.feature-card
+        div.icon-circle ☕
+        h3 Coffee Ready
+        p Hot coffee, iced drinks, and simple favorites that pair perfectly with something sweet.
+      article.feature-card
+        div.icon-circle 💛
+        h3 Family-Owned
+        p Downtown Donuts has been part of the community since 1992.
+
+  section.split-section
+    div.split-text
+      p.eyebrow Cozy + modern
+      h2 Made for slow mornings and quick stops.
+      p This prototype keeps the design simple, warm, and easy to use on phones. The goal is to help customers find the menu, order online, learn the story, and leave comments.
+      a.text-link(href="/about") Read our story →
+    div.highlight-box
+      h3 Online Ordering
+      p Add quick links so customers can order from their favorite delivery service.
+      div.order-links
+        a.button.primary(href="https://www.ubereats.com", target="_blank", rel="noopener noreferrer") UberEats
+        a.button.secondary(href="https://www.doordash.com", target="_blank", rel="noopener noreferrer") DoorDash
